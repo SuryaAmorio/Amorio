@@ -5,8 +5,8 @@
             <i class="pe-7s-note2"></i>
         </div>
         <div class="header-title">
-            <h1><?php echo display('add_user') ?></h1>
-            <small><?php echo display('add_new_user_information') ?></small>
+            <h1>Add Company</h1>
+            <small>Add New Company Information</small>
             <ol class="breadcrumb">
                 <li><a href="index.html"><i class="pe-7s-home"></i> <?php echo display('home') ?></a></li>
                 <li><a href="#"><?php echo display('web_settings') ?></a></li>
@@ -44,19 +44,66 @@
             <div class="col-sm-12">
                
                 <?php if($this->permission1->method('manage_user','read')->access()){?>
-                  <a href="<?php echo base_url('User/manage_user')?>" class="btn btn-success m-b-5 m-r-2"><i class="ti-align-justify"> </i> <?php echo display('manage_users')?> </a>
+                  <a href="<?php echo base_url('User/manage_user')?>" class="btn btn-success m-b-5 m-r-2"><i class="ti-align-justify"> </i>Manage Company</a>
               <?php }?>
                
             </div>
         </div>
 
+
+        <div class='row'> 
+                    
+        </div>
         <!-- New user -->
         <div class="row">
             <div class="col-sm-12">
                 <div class="panel panel-bd lobidrag">
+                      
+                <div class="panel-heading">
+                        <div class="panel-title">
+                            <h4>Company info</h4>
+                        </div>
+                        <br>
+
+                       <div class='row'>
+                        <div class='col-sm-6'>
+                        <table width="800" height="231" border="0" >
+  <tr>
+    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
+    <td><input type="text" class='form-control'></td>
+  </tr>
+  <tr>
+    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
+    <td><input type="text" class='form-control'></td>
+  </tr>
+  <tr>
+    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
+    <td><input type="text" class='form-control'></td>
+  </tr>
+  <tr>
+    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
+    <td><input type="text" class='form-control'></td>
+  </tr>
+  <tr>
+    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
+    <td><input type="text" class='form-control'></td>
+  </tr>
+  <tr>
+    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
+    <td><input type="text" class='form-control'></td>
+  </tr>
+</table>
+                        
+                            
+                        </div>
+                        <div class='col-sm-6'></div>
+                       </div>
+                    </div>
+                    <hr>
+
                     <div class="panel-heading">
                         <div class="panel-title">
-                            <h4><?php echo display('add_user') ?> </h4>
+                            <h4>Admin Info</h4>
                         </div>
                     </div>
                     <?php echo form_open_multipart('User/insert_user',array('class' => 'form-vertical','id'=>'validate'))?>
