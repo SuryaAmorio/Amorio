@@ -228,7 +228,7 @@
                                 <thead>
                                      <tr>
                                             <th class="text-center" width="20%">Date<i class="text-danger">*</i></th> 
-                                            <th class="text-center">Quantity</th>
+                                            <th class="text-center">Quantity<i class="text-danger">*</i></th>
                                             <th class="text-center">Description<i class="text-danger">*</i></th>
                                             <th class="text-center">Rate<i class="text-danger">*</i></th>
                                             <th class="text-center">Pro No / Reference<i class="text-danger">*</i></th>
