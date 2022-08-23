@@ -69,29 +69,24 @@
                         <div class='col-sm-6'>
                         <table width="800" height="231" border="0" >
   <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control'></td>
+  <form action="">
+    <td><label for="bank_name" class="col-sm-3 col-form-label">Name<i class="text-danger">*</i></label></td>
+    <td><input type="text" class='form-control' required></td>
   </tr>
   <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control'></td>
+    <td><label for="bank_name" class="col-sm-3 col-form-label">Email<i class="text-danger">*</i></label></td>
+    <td><input type="text" class='form-control' required></td>
   </tr>
   <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control'></td>
+    <td><label for="bank_name" class="col-sm-3 col-form-label">Phone<i class="text-danger">*</i></label></td>
+    <td><input type="text" class='form-control' required></td>
   </tr>
   <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control'></td>
+    <td><label for="bank_name" class="col-sm-3 col-form-label">Address<i class="text-danger">*</i></label></td>
+    <td><input type="text" class='form-control' required></td>
   </tr>
-  <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control'></td>
-  </tr>
-  <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Name <i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control'></td>
-  </tr>
+
+
 </table>
                         
                             
@@ -106,7 +101,7 @@
                             <h4>Admin Info</h4>
                         </div>
                     </div>
-                    <?php echo form_open_multipart('User/insert_user',array('class' => 'form-vertical','id'=>'validate'))?>
+                    
                     <div class="panel-body">
 
                         <div class="form-group row">
@@ -159,12 +154,12 @@
                             <label for="example-text-input" class="col-sm-4 col-form-label"></label>
                             <div class="col-sm-6">
                                 <input type="submit" id="add-customer" class="btn btn-primary btn-large" name="add-user" value="<?php echo display('save') ?>" tabindex="6"/>
-
-								<input type="submit" value="<?php echo display('save_and_add_another') ?>e" name="add-user-another" class="btn btn-success" id="add-customer-another" tabindex="7">
+                                </form>
+								
                             </div>
                         </div>
                     </div>
-                    <?php echo form_close()?>
+                 
                 </div>
             </div>
         </div>
