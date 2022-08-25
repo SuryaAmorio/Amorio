@@ -69,21 +69,31 @@
                         <div class='col-sm-6'>
                         <table width="800" height="231" border="0" >
   <tr>
-  <form action="">
+  <form action="http://<?php echo $_SERVER['HTTP_HOST']; ?>/stockie/assets/add_company.php" method="post" enctype="multipart/form-data">
     <td><label for="bank_name" class="col-sm-3 col-form-label">Name<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' required></td>
+    <td><input type="text" class='form-control' ramji name="cname"></td>
   </tr>
   <tr>
     <td><label for="bank_name" class="col-sm-3 col-form-label">Email<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' required></td>
+    <td><input type="text" class='form-control' ramji name="cemail"></td>
   </tr>
   <tr>
     <td><label for="bank_name" class="col-sm-3 col-form-label">Phone<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' required></td>
+    <td><input type="text" class='form-control' ramji name="cphone"></td>
   </tr>
   <tr>
     <td><label for="bank_name" class="col-sm-3 col-form-label">Address<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' required></td>
+    <td><input type="text" class='form-control' ramji name="caddress"></td>
+
+  </tr>
+   <tr>
+    <td><label for="bank_name" class="col-sm-3 col-form-label">Website<i class="text-danger">*</i></label></td>
+    <td><input type="text" class='form-control' ramji name="cwebsite"></td>
+    
+  </tr>
+  <tr>
+   
+
   </tr>
 
 
@@ -107,42 +117,37 @@
                         <div class="form-group row">
                             <label for="first_name" class="col-sm-3 col-form-label"><?php echo display('first_name') ?> <i class="text-danger">*</i></label>
                             <div class="col-sm-6">
-                                <input type="text" tabindex="1" class="form-control" name="first_name" id="first_name" placeholder="<?php echo display('first_name') ?>" required />
+                                <input type="text" tabindex="1" class="form-control" name="first_name" id="first_name" placeholder="<?php echo display('first_name') ?>" ramji />
                             </div>
                         </div>
 
                          <div class="form-group row">
                             <label for="last_name" class="col-sm-3 col-form-label"><?php echo display('last_name') ?> <i class="text-danger">*</i></label>
                             <div class="col-sm-6">
-                                <input type="text" tabindex="2" class="form-control" name="last_name" id="last_name" placeholder="<?php echo display('last_name') ?>" required />
+                                <input type="text" tabindex="2" class="form-control" name="last_name" id="last_name" placeholder="<?php echo display('last_name') ?>" ramji />
                             </div>
                         </div>
 
                          <div class="form-group row">
                             <label for="email" class="col-sm-3 col-form-label"><?php echo display('email') ?> <i class="text-danger">*</i></label>
                             <div class="col-sm-6">
-                               <input type="email" required="" tabindex="3" class="form-control" name="email" id="email" placeholder="<?php echo display('email') ?>"  />
+                               <input type="email" ramji="" tabindex="3" class="form-control" name="email" id="email" placeholder="<?php echo display('email') ?>"  />
                             </div>
                         </div>
 
                          <div class="form-group row">
                             <label for="password" class="col-sm-3 col-form-label"><?php echo display('password') ?> <i class="text-danger">*</i></label>
                             <div class="col-sm-6">
-                                <input type="password" tabindex="4" required="" class="form-control" id="password" name="password" placeholder="<?php echo display('password') ?>" />
+                                <input type="password" tabindex="4" ramji="" class="form-control" id="password" name="password" placeholder="<?php echo display('password') ?>" />
                             </div>
                         </div>
 
-                         <div class="form-group row">
-                            <label for="image" class="col-sm-3 col-form-label"><?php echo display('image') ?> <i class="text-danger"></i></label>
-                            <div class="col-sm-6">
-                                <input type="file" tabindex="5" class="form-control" id="logo" name="logo" />
-                            </div>
-                        </div>
+                        
 
                         <div class="form-group row">
                             <label for="user_type" class="col-sm-3 col-form-label"><?php echo display('user_type') ?> <i class="text-danger">*</i></label>
                             <div class="col-sm-6">
-                                <select class="form-control" name="user_type" id="user_type" tabindex="6" required="">
+                                <select class="form-control" name="user_type" id="user_type" tabindex="6" ramji="">
 								    <option value="0"><?php echo display('select_one') ?></option>
 								    <option value="1"><?php echo display('admin') ?></option>
 								    <option value="2"><?php echo display('user') ?></option>
@@ -153,6 +158,8 @@
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-4 col-form-label"></label>
                             <div class="col-sm-6">
+                                <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+                                    <input type="hidden" name="uid" value="<?php echo $_SESSION['user_id']; ?>">
                                 <input type="submit" id="add-customer" class="btn btn-primary btn-large" name="add-user" value="<?php echo display('save') ?>" tabindex="6"/>
                                 </form>
 								

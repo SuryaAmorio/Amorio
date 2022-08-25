@@ -1,6 +1,6 @@
 <?php
 
-echo $_SERVER['HTTP_HOST'];
+$host= $_SERVER['HTTP_HOST'];
 
 if($_SERVER['HTTP_HOST']=='localhost')
 {
@@ -20,5 +20,6 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 
 }
+
 
 ?>

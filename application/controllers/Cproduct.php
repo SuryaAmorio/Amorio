@@ -48,8 +48,14 @@ class Cproduct extends CI_Controller {
         $s_id = $this->input->post('supplier_id',TRUE);
         $product_model = $this->input->post('model',TRUE);
         for ($i = 0, $n = count($s_id); $i < $n; $i++) {
+            if($sup_price[$i])
+            {
             $supplier_price = $sup_price[$i];
+            }
+            if($supp_id)
+            {
             $supp_id = $s_id[$i];
+        }
 
             $supp_prd = array(
                 'created_by'       =>  $this->session->userdata('user_id'),

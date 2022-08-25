@@ -364,7 +364,7 @@
                                 <tfoot>
                                     <tr>
                                         
-                                        <td class="text-right" colspan="5"><b>Overall Total:</b></td>
+                                        <td class="text-right" colspan="5"><b>Overall Totals:</b></td>
                                         <td class="text-right">
                                             <input type="text" id="Total" class="text-right form-control" name="total" value="0.00" readonly="readonly" />
                                         </td>

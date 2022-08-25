@@ -38,6 +38,9 @@ class User extends CI_Controller {
         $this->template->full_admin_html_view($content);
     }
 
+
+    #==============Add  Company and admin user==============#
+
     #==============Insert User==============#
 
     public function insert_user() {

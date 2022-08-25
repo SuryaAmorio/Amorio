@@ -43,7 +43,7 @@
             <?php echo form_open('Admin_dashboard/userauth', array('id' => 'login',)) ?>
             <div class="form-group">
                 <label class="control-label" for="username"><?php echo display('email') ?></label>
-                <input type="text" placeholder="<?php echo display('email') ?>" title="<?php echo display('email') ?>"  value="" name="username" id="username" class="form-control">
+                <input type="text"   value="" name="username" id="username" class="form-control">
                 <span class="help-block small"><?php echo display('your_unique_email') ?></span>
             </div>
             <div class="form-group">
