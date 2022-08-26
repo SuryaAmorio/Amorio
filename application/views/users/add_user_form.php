@@ -42,11 +42,9 @@
 
         <div class="row">
             <div class="col-sm-12">
-               
                 <?php if($this->permission1->method('manage_user','read')->access()){?>
                   <a href="<?php echo base_url('User/manage_user')?>" class="btn btn-success m-b-5 m-r-2"><i class="ti-align-justify"> </i>Manage Company</a>
-              <?php }?>
-               
+                <?php }?>
             </div>
         </div>
 
