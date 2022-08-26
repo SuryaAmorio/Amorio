@@ -6,7 +6,7 @@
         </div>
         <div class="header-title">
             <h1>Add Company</h1>
-            <small>Add New Company Information</small>
+            <small>Add New Company Information hdghd</small>
             <ol class="breadcrumb">
                 <li><a href="index.html"><i class="pe-7s-home"></i> <?php echo display('home') ?></a></li>
                 <li><a href="#"><?php echo display('web_settings') ?></a></li>
