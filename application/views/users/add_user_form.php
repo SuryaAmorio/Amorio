@@ -8,7 +8,7 @@
             <h1><?php echo display('add_user') ?></h1>
             <small><?php echo display('add_new_user_information') ?></small>
             <ol class="breadcrumb">
-                <li><a href="index.html"><i class="pe-7s-home"></i> <?php echo display('home') ?></a></li>
+                <li><a href="index.html"><i class="pe-7s-home"></i> <?php echo display('home') ?>dsds</a></li>
                 <li><a href="#"><?php echo display('web_settings') ?></a></li>
                 <li class="active"><?php echo display('add_user') ?></li>
             </ol>
