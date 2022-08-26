@@ -8,7 +8,7 @@
             <h1>Add Company</h1>
             <small>Add New Company Information</small>
             <ol class="breadcrumb">
-                <li><a href="index.html"><i class="pe-7s-home"></i> <?php echo display('home') ?>qq</a></li>
+                <li><a href="index.html"><i class="pe-7s-home"></i> <?php echo display('home') ?>qwwq</a></li>
                 <li><a href="#"><?php echo display('web_settings') ?></a></li>
                 <li class="active"><?php echo display('add_user') ?></li>
             </ol>
