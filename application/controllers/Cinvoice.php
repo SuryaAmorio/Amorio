@@ -23,7 +23,7 @@ class Cinvoice extends CI_Controller {
 
 
     public function index() {
-        // echo 3;
+     
 
         $CI = & get_instance();
 

@@ -164,7 +164,7 @@
 
                                     <div class="col-sm-6">
 
-                                        <input type="text" size="100"  name="customer_name" class=" form-control" placeholder='<?php echo display('customer_name').'/'.display('phone') ?>' id="customer_name" tabindex="1" onkeyup="customer_autocomplete()" value="{customer_name}"/>
+                                        <input type="text" size="100"  name="customer_name" class=" form-control" placeholder='<?php echo display('customer_name').'/'.display('phone') ?>' id="customer_name" tabindex="1" onkeyup="customer_autocomplete()"  />
 
 
 
@@ -320,7 +320,14 @@
 
                                     <div class="col-sm-8">
 
-                                        <input type="text" name="" name="payment_terms" class=" form-control" placeholder='Payment Terms' id="billing_address"> 
+                                        <select   name="payment_terms" id="payment_terms" class=" form-control" placeholder='Payment Terms' id="payment_terms">
+                                         <option value=""></option>   
+                                        <option value="100%">100%</option> 
+                                        <option value="30-70">30-70%</option> 
+                                        <option value="70-30">70-30%</option> 
+                                        <option value="75-25">75-25%</option> 
+                                        <option value="25-75">25-75%</option> 
+                                        </select>
 
                                     </div>
 
@@ -332,8 +339,17 @@
 
                                     <div class="col-sm-8">
 
-                                        <input type="text" name="" name="number_of_days" class=" form-control" placeholder='Number of days' id="number_of_days"> 
-
+                                        <select type="text" name="" name="number_of_days" id=number_of_days class=" form-control" placeholder='Number of days' id="number_of_days"> 
+                                            <option value="">number_of_days</option>
+                                            <?php 
+                                            for($i=1;$i<100;$i++)
+                                            {
+                                                ?>
+                                                <option value="<?php echo $i; ?>"><?php echo $i; ?>days</option>
+                                                <?php
+                                            }
+                                            ?>
+                                            <select>
                                     </div>
 
                                 </div> 
@@ -417,11 +433,11 @@
 
                                
 
-                                        $date1 = date('Y-m-d');
+                                        $date1 ='26-08-2022';
 
                                         ?>
 
-                                        <input class="datepicker form-control" type="text" size="50" name="payment_due_date" id="date1" required value="<?php echo html_escape($date1); ?>" tabindex="4" />
+                                        <input class="datepicker form-control" type="text" size="50" name="payment_due_date" id="date1" required value="2018-07-22  " tabindex="4" />
 
                                     </div>
 
@@ -1242,12 +1258,34 @@
 <!-- Invoice Report End -->
 
 <script type="text/javascript">
+
 $(document).ready(function(){
+    $('#number_of_days').change(function(){
+     
+     var days=$(this).val();   
+     var payment_terms=$('#payment_terms').val();   
+     var days=$().val();   
+   $.ajax({
+    url: "../../stockie/getdate.php?days="+days,
+    type: 'GET',
+    success: function(res) {
+       
+        $('#billing_address').html(res);
+    }
+});
+        
+
+    });
+
+
    $('#customer_name').blur(function(){
    
+   var payment_terms= $('#payment_terms').val();
    var value= $(this).val();
+  
+   // alert(3);
   $.ajax({
-    url: "../../getcustomer_data.php?val="+value,
+    url: "../../stockie/getcustomer_data.php?val="+value+"&payment="+payment_terms,
     type: 'GET',
     success: function(res) {
        

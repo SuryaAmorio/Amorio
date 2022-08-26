@@ -135,7 +135,7 @@
                         <div class="row">
                             <div class="col-sm-6" id="payment_from_1">
                                 <div class="form-group row">
-                                    <label for="customer_name1" class="col-sm-3 col-form-label"><?php echo display('customer_name').'/'.display('phone') ?> <i class="text-danger">*</i></label>
+                                    <label for="customer_name1" class="col-sm-3 col-form-label">sss<?php echo display('customer_name').'/'.display('phone') ?> <i class="text-danger">*</i></label>
                                     <div class="col-sm-6">
                                         <input type="text" size="100"  name="customer_name" class="customerSelection form-control" placeholder='<?php echo display('customer_name').'/'.display('phone') ?>' id="customer_name" value="{customer_name}" tabindex="3"  onkeyup="customer_autocomplete()"/>
 
@@ -150,7 +150,7 @@
                                     </div>
                                      <?php if($this->permission1->method('add_customer','create')->access()){ ?>
                                     <div  class="col-sm-3">
-                                         <a href="#" class="client-add-btn btn btn-success" aria-hidden="true" data-toggle="modal" data-target="#cust_info"><i class="ti-plus m-r-2"></i></a>
+                                         <a href="#" class="client-add-btn btn btn-success" aria-hidden="true" data-toggle="modal" data-target="#cust_info"><i class="ti-plus m-r-2"></i></a>s
                                     </div>
                                 <?php } ?>
                                 </div>

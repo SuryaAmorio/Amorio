@@ -509,6 +509,7 @@ class Linvoice {
 
     //Pos invoice add form
     public function pos_invoice_add_form() {
+
         $CI = & get_instance();
         $CI->load->model('Invoices');
         $CI->load->model('Web_settings');
@@ -562,6 +563,7 @@ class Linvoice {
 
     //Invoice add form
     public function invoice_add_form() {
+      
         $CI = & get_instance();
         $CI->load->model('Invoices');
         $CI->load->model('Web_settings');

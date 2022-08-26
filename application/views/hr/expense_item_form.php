@@ -119,7 +119,7 @@
                          <label for="last_name" class="col-sm-2 col-form-div">Date<i class="text-danger">*</i></label>
 
                         <div class="col-sm-4">
-                    <input class="datepicker form-control" type="text" size="50" name="invoice_date" id="date" required value="<?php echo html_escape($date); ?>" tabindex="4" />
+                    <input class="datepicker form-control" type="text" size="50" name="invoice_date" id="date" required value="" tabindex="4" />
                         </div>
 
                     </div>
@@ -149,7 +149,7 @@
 
                         <div class="col-sm-4">
 
-                           <input class="datepicker form-control" type="text" size="50" name="invoice_date" id="date" required value="<?php echo html_escape($date); ?>" tabindex="4" />
+                           <input class="datepicker form-control" type="text" size="50" name="invoice_date" id="date" required value="" tabindex="4" />
                         </div>
 
 
