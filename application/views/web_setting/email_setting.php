@@ -39,9 +39,6 @@
             $this->session->unset_userdata('error_message');
         }
         ?>
-
-
-
         <!-- New customer -->
         <div class="row">
             <div class="col-sm-12">

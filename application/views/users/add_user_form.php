@@ -66,36 +66,41 @@
                        <div class='row'>
                         <div class='col-sm-6'>
                         <table width="800" height="231" border="0" >
-  <tr>
-  <form action="http://<?php echo $_SERVER['HTTP_HOST']; ?>/stockie/assets/add_company.php" method="post" enctype="multipart/form-data">
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Name<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' ramji name="cname"></td>
-  </tr>
-  <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Email<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' ramji name="cemail"></td>
-  </tr>
-  <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Phone<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' ramji name="cphone"></td>
-  </tr>
-  <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Address<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' ramji name="caddress"></td>
+                        <tr>
+                        <form action='User/company_insert' method='post' enctype="multipart/form-data">
+                            <td><label for="bank_name" class="col-sm-3 col-form-label">Name<i class="text-danger">*</i></label></td>
+                            <td><input type="text" class='form-control' name="company_name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="bank_name" class="col-sm-3 col-form-label">Email<i class="text-danger">*</i></label></td>
+                            <td><input type="email" class='form-control' name="company_email"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="bank_name" class="col-sm-3 col-form-label">Phone<i class="text-danger">*</i></label></td>
+                            <td><input type="text" class='form-control'  name="mobile"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="bank_name" class="col-sm-3 col-form-label">Address<i class="text-danger">*</i></label></td>
+                            <td><input type="text" class='form-control'  name="address"></td>
 
-  </tr>
-   <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Website<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' ramji name="cwebsite"></td>
-    
-  </tr>
-  <tr>
-   
+                        </tr>
+                        <tr>
+                            <td><label for="bank_name" class="col-sm-3 col-form-label">Website<i class="text-danger">*</i></label></td>
+                            <td><input type="text" class='form-control' name="website"></td>
+                            
+                        </tr>
+                        <tr>
+                            <td><label for="bank_name" class="col-sm-3 col-form-label">Logo<i class="text-danger">*</i></label></td>
+                            <td><input type="file" class='form-control' name="logo"></td>
+                            
+                        </tr>
+                        <tr>
+                        
 
-  </tr>
+                        </tr>
 
 
-</table>
+                        </table>
                         
                             
                         </div>
@@ -113,25 +118,12 @@
                     <div class="panel-body">
 
                         <div class="form-group row">
-                            <label for="first_name" class="col-sm-3 col-form-label"><?php echo display('first_name') ?> <i class="text-danger">*</i></label>
+                            <label for="username" class="col-sm-3 col-form-label">Username<i class="text-danger">*</i></label>
                             <div class="col-sm-6">
-                                <input type="text" tabindex="1" class="form-control" name="first_name" id="first_name" placeholder="<?php echo display('first_name') ?>" ramji />
+                                <input type="text" tabindex="1" class="form-control" name="username" id="username" placeholder="Enter your username" />
                             </div>
                         </div>
 
-                         <div class="form-group row">
-                            <label for="last_name" class="col-sm-3 col-form-label"><?php echo display('last_name') ?> <i class="text-danger">*</i></label>
-                            <div class="col-sm-6">
-                                <input type="text" tabindex="2" class="form-control" name="last_name" id="last_name" placeholder="<?php echo display('last_name') ?>" ramji />
-                            </div>
-                        </div>
-
-                         <div class="form-group row">
-                            <label for="email" class="col-sm-3 col-form-label"><?php echo display('email') ?> <i class="text-danger">*</i></label>
-                            <div class="col-sm-6">
-                               <input type="email" ramji="" tabindex="3" class="form-control" name="email" id="email" placeholder="<?php echo display('email') ?>"  />
-                            </div>
-                        </div>
 
                          <div class="form-group row">
                             <label for="password" class="col-sm-3 col-form-label"><?php echo display('password') ?> <i class="text-danger">*</i></label>
@@ -159,7 +151,7 @@
                                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input type="hidden" name="uid" value="<?php echo $_SESSION['user_id']; ?>">
                                 <input type="submit" id="add-customer" class="btn btn-primary btn-large" name="add-user" value="<?php echo display('save') ?>" tabindex="6"/>
-                                </form>
+                </form>
 								
                             </div>
                         </div>

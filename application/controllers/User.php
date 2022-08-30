@@ -25,6 +25,48 @@ class User extends CI_Controller {
 
     #===============User Search Item===========#
 
+    public function company_insert(){
+     
+
+        $config = array(
+            'upload_path' => "assets/dist/images/profile/",
+            'allowed_types' => "gif|jpg|png|jpeg|pdf",
+            'encrypt_name' => true
+        );   
+        $this->load->library('upload',$config);
+
+        if($this->upload->do_upload('logo'))
+        {
+            $view = $this->upload->data();
+            $logo = base_url($config['upload_path'] . $view['file_name']);
+        }else{
+            $view = $this->upload->data();
+            $logo = base_url($config['upload_path'] . $view['file_name']);
+        }
+
+        $data['company_name'] = $this->input->post('company_name');
+        $data['company_email'] = $this->input->post('company_email');
+        $data['mobile'] = $this->input->post('mobile');
+        $data['address'] = $this->input->post('address');
+        $data['website'] = $this->input->post('website');
+        $data['logo'] = $logo;
+
+        // echo '<pre>';
+        // print_r($data); 
+        // echo '</pre>';
+        // exit();
+
+       $this->db->insert('company_information', $data);
+
+        $last_insert_id = $this->db->insert_id();
+        $data1['username'] = $this->input->post('username');
+        $data1['password'] = $this->input->post('password');
+        $data1['user_type'] = $this->input->post('user_type');
+        $data1['cid'] = $last_insert_id;
+        $this->db->insert('user_login', $data1);
+        redirect(base_url('User'));
+    }
+
     public function user_search_item() {
         $user_id = $this->input->post('user_id');
         $content = $this->lusers->user_search_item($user_id);
@@ -41,10 +83,11 @@ class User extends CI_Controller {
 
     #==============Add  Company and admin user==============#
 
+
     #==============Insert User==============#
 
     public function insert_user() {
-         $this->load->library('upload');
+        $this->load->library('upload');
         if (($_FILES['logo']['name'])) {
             $files = $_FILES;
             $config = array();
@@ -58,7 +101,7 @@ class User extends CI_Controller {
 
             $this->upload->initialize($config);
               if (!$this->upload->do_upload('logo')) {
-                $sdata['error_message'] = $this->upload->display_errors();
+                $data['error_message'] = $this->upload->display_errors();
                 $this->session->set_userdata($sdata);
                 redirect('user');
             } else {

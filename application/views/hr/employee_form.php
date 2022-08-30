@@ -602,7 +602,7 @@ from you. See the instructions for your income tax return.</p>
 
 
 
-                         <?php echo form_open_multipart('Chrm/create_employee','id="validate"') ?>
+                         <?php echo form_open_multipart('Chrm/create_employee','id="validate"', ) ?>
 
                     <div class="form-group row">
 

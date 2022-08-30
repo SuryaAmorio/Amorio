@@ -143,7 +143,7 @@ class Chrm extends CI_Controller {
     $this->session->set_userdata(array('message' => display('successfully_delete')));
      redirect("Chrm/manage_designation");
     }
-    // ================== Employee part =============================
+    // ================== Employee part ============================= 
     public function add_employee() {
     $this->auth->check_admin_auth();
     $this->load->model('Hrm_model');
@@ -155,6 +155,11 @@ class Chrm extends CI_Controller {
     // create employee
     public function create_employee(){
         $this->load->model('Hrm_model');
+        
+        echo '<pre>';
+        print_r($_POST);
+        echo '</pre>';
+        exit();
 
      $this->form_validation->set_rules('first_name',display('first_name'),'required|max_length[100]');
       $this->form_validation->set_rules('last_name',display('last_name'),'required|max_length[100]');
@@ -163,31 +168,10 @@ class Chrm extends CI_Controller {
      $this->form_validation->set_rules('hrate',display('salary'),'max_length[20]');
         #-------------------------------#
         if ($this->form_validation->run()) {
-
-        //  if ($_FILES['image']['name']) {
-        //     $config['upload_path'] = './my-assets/image/employee/';
-        //     $config['allowed_types'] = 'gif|jpg|png|jpeg|JPEG|GIF|JPG|PNG';
-        //     $config['max_size'] = "*";
-        //     $config['max_width'] = "*";
-        //     $config['max_height'] = "*";
-        //     $config['encrypt_name'] = TRUE;
-
-        //     $this->load->library('upload', $config);
-        //     if (!$this->upload->do_upload('image')) {
-        //         $error = array('error' => $this->upload->display_errors());
-        //         $this->session->set_userdata(array('error_message' => $this->upload->display_errors()));
-        //         redirect(base_url('Chrm/add_employee'));
-        //     } else {
-        //         $image = $this->upload->data();
-        //         $image_url = base_url() . "my-assets/image/employee/" . $image['file_name'];
-        //     }
-        // }
-
-
-
          if ($_FILES['w4from']['name']) {
             $config['upload_path'] = './my-assets/image/employee/';
-            $config['allowed_types'] = 'pdf|csv';
+            // $config['allowed_types'] = 'pdf|csv';
+            $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size'] = "*";
             $config['max_width'] = "*";
             $config['max_height'] = "*";
@@ -218,7 +202,7 @@ class Chrm extends CI_Controller {
                 'address_line_1'=> $this->input->post('address_line_1',true),
                 'address_line_2'=> $this->input->post('address_line_2',true),
                 'blood_group'   => $this->input->post('blood_group',true),
-                'social_security_number'   => $this->input->post('ssn',true),
+                'social_security_number'   => $this->input->post('social_security_number',true),
                 'routing_number'   => $this->input->post('routing_number',true),
                 'country'       => $this->input->post('country',true),
                 'city'          => $this->input->post('city',true),

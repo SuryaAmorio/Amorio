@@ -681,8 +681,6 @@ class Lweb_setting {
 
         );
 
-     
-
         $setting = $CI->parser->parse('web_setting/expense_invoice_setting', $data, true);
 
         return $setting;
@@ -691,23 +689,20 @@ class Lweb_setting {
 
 
 
-     public function email_setting() {
+    public function email_setting() {
 
         $CI = & get_instance();
 
         $CI->load->model('Web_settings');
 
-     
-
-
-
-     
+        $data = array();
 
         $setting = $CI->parser->parse('web_setting/email_setting', $data, true);
 
         return $setting;
 
     }
+
     public function email_template()
     {
        $CI = & get_instance();
