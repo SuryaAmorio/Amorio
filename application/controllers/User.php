@@ -25,6 +25,33 @@ class User extends CI_Controller {
 
     #===============User Search Item===========#
 
+    public function company_insert(){
+
+        
+      print_r($_POST);
+        exit();
+        // $data = array(
+        //     'CompanyName' => $company,
+        //     'Email' => $email,
+        //     'Mobile' => $mobile,
+        //     'address' => $address,
+        //     'Website' => $website
+        // );
+
+        // echo '<pre>';
+        //  var_dump($data); die;
+        // echo '</pre>';
+
+        $status =  $this->db->insert('company_information', $data);
+
+        if($status === true)
+        {
+            echo "<script>alert('Detailed Saved Successfully')</script>";
+        }else{
+            echo "<script>alert('Detailed Saved Failed!!!!!')</script>";
+        }
+    }
+
     public function user_search_item() {
         $user_id = $this->input->post('user_id');
         $content = $this->lusers->user_search_item($user_id);

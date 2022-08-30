@@ -2,6 +2,10 @@
 include 'config.php';
 session_start();
 
+
+
+
+
  if(!isset($_FILES['image'])){
 		
   $query='SELECT * from invoice_design where uid='.$_REQUEST['id'];
@@ -69,7 +73,7 @@ $file_ext = end($tmp);
        	$sql=mysqli_query($con,$query);
        	if($sql)
        	{
-       		header("Location:http://localhost//Cweb_setting/invoice_design"); 
+       		header("Location:http:/stockie/Cweb_setting/invoice_design"); 
        		echo 2;
        	}
       }else{

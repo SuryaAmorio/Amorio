@@ -6,9 +6,9 @@
         </div>
         <div class="header-title">
             <h1>Add Company</h1>
-            <small>Add New Company Information</small>
+            <small>Add New Company Information hdghd</small>
             <ol class="breadcrumb">
-                <li><a href="index.html"><i class="pe-7s-home"></i> <?php echo display('home') ?>qwwq</a></li>
+                <li><a href="index.html"><i class="pe-7s-home"></i> <?php echo display('home') ?></a></li>
                 <li><a href="#"><?php echo display('web_settings') ?></a></li>
                 <li class="active"><?php echo display('add_user') ?></li>
             </ol>
@@ -42,11 +42,9 @@
 
         <div class="row">
             <div class="col-sm-12">
-               
                 <?php if($this->permission1->method('manage_user','read')->access()){?>
                   <a href="<?php echo base_url('User/manage_user')?>" class="btn btn-success m-b-5 m-r-2"><i class="ti-align-justify"> </i>Manage Company</a>
-              <?php }?>
-               
+                <?php }?>
             </div>
         </div>
 
@@ -68,36 +66,36 @@
                        <div class='row'>
                         <div class='col-sm-6'>
                         <table width="800" height="231" border="0" >
-  <tr>
-  <form action="http://<?php echo $_SERVER['HTTP_HOST']; ?>/stockie/assets/add_company.php" method="post" enctype="multipart/form-data">
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Name<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' ramji name="cname"></td>
-  </tr>
-  <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Email<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' ramji name="cemail"></td>
-  </tr>
-  <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Phone<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' ramji name="cphone"></td>
-  </tr>
-  <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Address<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' ramji name="caddress"></td>
+                        <tr>
+                        <form action="User/company_insert" method="post"  enctype="multipart/form-data">
+                            <td><label for="bank_name" class="col-sm-3 col-form-label">Name<i class="text-danger">*</i></label></td>
+                            <td><input type="text" class='form-control' name="company_name"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="bank_name" class="col-sm-3 col-form-label">Email<i class="text-danger">*</i></label></td>
+                            <td><input type="email" class='form-control' name="email"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="bank_name" class="col-sm-3 col-form-label">Phone<i class="text-danger">*</i></label></td>
+                            <td><input type="text" class='form-control'  name="mobile"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="bank_name" class="col-sm-3 col-form-label">Address<i class="text-danger">*</i></label></td>
+                            <td><input type="text" class='form-control'  name="address"></td>
 
-  </tr>
-   <tr>
-    <td><label for="bank_name" class="col-sm-3 col-form-label">Website<i class="text-danger">*</i></label></td>
-    <td><input type="text" class='form-control' ramji name="cwebsite"></td>
-    
-  </tr>
-  <tr>
-   
+                        </tr>
+                        <tr>
+                            <td><label for="bank_name" class="col-sm-3 col-form-label">Website<i class="text-danger">*</i></label></td>
+                            <td><input type="text" class='form-control' name="website"></td>
+                            
+                        </tr>
+                        <tr>
+                        
 
-  </tr>
+                        </tr>
 
 
-</table>
+                        </table>
                         
                             
                         </div>
@@ -161,7 +159,7 @@
                                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input type="hidden" name="uid" value="<?php echo $_SESSION['user_id']; ?>">
                                 <input type="submit" id="add-customer" class="btn btn-primary btn-large" name="add-user" value="<?php echo display('save') ?>" tabindex="6"/>
-                                </form>
+                            </form>
 								
                             </div>
                         </div>
