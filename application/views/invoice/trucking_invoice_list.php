@@ -187,7 +187,7 @@ $(function() {
             , {
                 extend: "csv", title: "PurchaseLIst",exportOptions: {
                        columns: [ 0,1,2,3,4,5] //Your Colume value those you want print
-                           }, className: "btn-sm prints"
+                           }, className: "btn-sm prints",charset: 'UTF-16LE'
             }
             , {
                 extend: "excel",exportOptions: {

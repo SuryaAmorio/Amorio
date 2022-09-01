@@ -158,7 +158,7 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
             , {
                 extend: "csv", title: "CustomerList", exportOptions: {
                        columns: [ 0, 1, 2, 3, 4,5,6,7 ] //Your Colume value those you want
-                           }, className: "btn-sm prints"
+                           }, className: "btn-sm prints",charset: 'UTF-16LE'
             }
             , {
                 extend: "excel", title: "CustomerList", exportOptions: {
@@ -240,7 +240,7 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
             , {
                 extend: "csv", title: "Credit CustomerList", exportOptions: {
                        columns: [ 0, 1, 2, 3, 4,5,6,7 ] //Your Colume value those you want
-                           }, className: "btn-sm prints"
+                           }, className: "btn-sm prints",charset: 'UTF-16LE'
             }
             , {
                 extend: "excel", title: "Credit CustomerList", exportOptions: {
@@ -322,7 +322,7 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
             , {
                 extend: "csv", title: "Paid CustomerList", exportOptions: {
                        columns: [ 0, 1, 2, 3, 4 ,5,6,7] //Your Colume value those you want
-                           }, className: "btn-sm prints"
+                           }, className: "btn-sm prints",charset: 'UTF-16LE'
             }
             , {
                 extend: "excel", title: "Paid CustomerList", exportOptions: {
@@ -405,7 +405,7 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
             , {
                 extend: "csv", title: "SupplierList", exportOptions: {
                        columns: [ 0, 1, 2, 3, 4,5 ] //Your Colume value those you want
-                           }, className: "btn-sm prints"
+                           }, className: "btn-sm prints",charset: 'UTF-16LE'
             }
             , {
                 extend: "excel", title: "SupplierList", exportOptions: {
@@ -490,7 +490,7 @@ var twelveHour = $('.timepicker-12-hr').wickedpicker();
             , {
                 extend: "csv", title: "ProductList",exportOptions: {
                        columns: [ 0, 1, 2, 3, 4,5] //Your Colume value those you want print
-                           }, className: "btn-sm prints"
+                           }, className: "btn-sm prints",charset: 'UTF-16LE'
             }
             , {
                 extend: "excel",exportOptions: {
@@ -567,7 +567,7 @@ $(document).ready(function() {
             , {
                 extend: "csv", title: "InvoiceList",exportOptions: {
                        columns: [ 0, 1, 2, 3,4,5] //Your Colume value those you want print
-                           }, className: "btn-sm prints"
+                           }, className: "btn-sm prints",charset: 'UTF-16LE'
             }
             , {
                 extend: "excel",exportOptions: {
@@ -664,7 +664,7 @@ var invoicedatatable = $('#ProfarmaInvList').DataTable({
         , {
             extend: "csv", title: "InvoiceList",exportOptions: {
                    columns: [ 0, 1, 2, 3,4,5] //Your Colume value those you want print
-                       }, className: "btn-sm prints"
+                       }, className: "btn-sm prints",charset: 'UTF-16LE'
         }
         , {
             extend: "excel",exportOptions: {
@@ -801,7 +801,7 @@ $(document).ready(function() {
                 extend: "copy", className: "btn-sm prints"
             }
             , {
-                extend: "csv", title: "StockList", className: "btn-sm prints"
+                extend: "csv", title: "StockList", className: "btn-sm prints",charset: 'UTF-16LE'
             }
             , {
                 extend: "excel", title: "StockList", className: "btn-sm prints"
