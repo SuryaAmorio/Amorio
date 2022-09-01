@@ -62,8 +62,6 @@ class Cservice extends CI_Controller {
 
         $this->template->full_admin_html_view($content);
 
-        
-
     }
 
 

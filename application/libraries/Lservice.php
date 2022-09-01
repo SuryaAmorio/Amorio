@@ -10,11 +10,10 @@ if (!defined('BASEPATH'))
 
 class Lservice {
 
-
-
     //Retrieve  service List	
 
     public function service_list() {
+
 
         $CI = & get_instance();
 
@@ -24,15 +23,21 @@ class Lservice {
 
         $tablecolumn  = $CI->db->list_fields('product_service');
 
+        // echo '<pre>';
+        // print_r($tablecolumn);
+        // echo '</pre>';
+        // exit();
+
         $num_column   = count($tablecolumn)-4;
 
         $taxfield  = $CI->db->select('tax_name,default_value')
 
-                ->from('tax_settings')
+            ->from('tax_settings')
 
-                ->get()
+            ->get()
 
-                ->result_array();
+            ->result_array(); 
+
 
         $i = 0;
 
@@ -45,6 +50,7 @@ class Lservice {
                 $i++;
 
                 $service_list[$k]['sl'] = $i + $CI->uri->segment(3);
+            
 
             }
 
@@ -70,7 +76,6 @@ class Lservice {
 
 
 
-
     public function help_list() {
 
         $CI = & get_instance();
@@ -79,16 +84,10 @@ class Lservice {
 
         $service_list = $CI->Service->content_list();  //It will get only  services
 
-       
-
-       
-
         $data = array(
 
             'title'        => display('Help Content'),
-
             'service_list' => $service_list,
-
         
         );
 

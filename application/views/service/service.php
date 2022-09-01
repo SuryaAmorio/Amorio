@@ -189,11 +189,7 @@
 
                                         foreach ($service_list as $services) {
 
-                                         
-
                                         ?>
-
-                                        
 
                                         <tr>
 
@@ -291,13 +287,8 @@
 
                         
 
-                            <div><a href="<?php echo base_url('assets/data/csv/service_csv_sample.csv') ?>" class="btn btn-primary pull-right"><i class="fa fa-download"></i><?php echo display('download_sample_file')?> </a> </div>
-
-                       
-
+                            <div><a href="<?php echo base_url('assets/data/csv/service_csv_sample.csv') ?>" class="btn btn-primary pull-right"><i class="fa fa-download"></i><?php echo display('download_sample_file')?></a> </div>
                     </div>
-
-                    
 
                     <div class="panel-body">
 
