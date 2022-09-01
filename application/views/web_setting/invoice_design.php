@@ -315,7 +315,9 @@ foreach ($colors as $key => $value)
   </tr>
 </table>
 
-    <p style="float: right;"><a href="../test/?id=<?php echo $_SESSION['user_id']; ?>" class="btn btn-success">Preview pdf</a></p>
+   <br><button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+Preview
+</button>
         </div>
     </div>
   </div></div>
@@ -406,7 +408,9 @@ foreach ($colors as $key => $value)
   </tr>
 </table>
 
-    <p style="float: right;"><a href="../test/?id=<?php echo $_SESSION['user_id']; ?>" class="btn btn-success">Preview pdf</a></p>
+   <br><button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+Preview
+</button>
         </div>
     </div>
   </div></div>
@@ -499,7 +503,10 @@ foreach ($colors as $key => $value)
   </tr>
 </table>
 
-    <p style="float: right;"><a href="../test/?id=<?php echo $_SESSION['user_id']; ?>" class="btn btn-success">Preview pdf</a></p>
+
+   <br><button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+Preview
+</button>
         </div>
     </div>
   </div></div>
@@ -577,7 +584,9 @@ foreach ($colors as $key => $value)
   </tr>
 </table>
 
-    <p style="float: right;"><a href="../test/?id=<?php echo $_SESSION['user_id']; ?>" class="btn btn-success">Preview pdf</a></p>
+   <br><button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+Preview
+</button>
         </div>
     </div>
   </div></div>
@@ -654,7 +663,9 @@ foreach ($colors as $key => $value)
   </tr>
 </table>
 
-    <p style="float: right;"><a href="../test/?id=<?php echo $_SESSION['user_id']; ?>" class="btn btn-success">Preview pdf</a></p>
+   <br><button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModal">
+Preview
+</button>
         </div>
     </div>
   </div></div>
@@ -736,5 +747,80 @@ function dot(value)
     
 
 </script>
+<!-- The Modal -->
+  <div class="modal" id="myModal" >
+  <div class="modal-dialog" style="width:1250px;height:1250px;">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Invoice Header</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+      <div class="col-sm-6 text-center"><?php echo $header; ?></div>
+            <div class="col-sm-3"><img src="<?php echo  'http://localhost//assets/'.$logo; ?>" style='width: 40%;'></div>
+      <br/>
+      <table width="348" height="79" border="1">
+  <tr>
+    <td width="204" height="30" style="background-color:#<?php echo $color; ?>;color:white;"><b>BILL TO</b> </td>
+  </tr>
+  <tr>
+    <td>fdfdsdsf</td>
+  </tr>
+</table>
+<br>
+<br>
+<table width="100%" height='100%' border="1">
+  <tr style="background-color: #<?php echo $color; ?>;color: white;">
+    <td>Commercial</td>
+    <td>Date</td>
+    <td>Total Due</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>enclosed</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<br>
+<br>
+<table width="100%" height='100%' border="1">
+  <tr style="background-color: #<?php echo $color; ?>;color: white;">
+    <td>Material</td>
+    <td>Description</td>
+    <td>Qty</td>
+    <td>Rate</td>
+    <td>Amount</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+  </div>
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
