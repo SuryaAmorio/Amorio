@@ -23,52 +23,77 @@ class Permission extends CI_Controller
     public function create()
 
     {
-        $CI =& get_instance();
-        $CI->auth->check_admin_auth();
-        $CI->load->model('Permission_model');
+
+      ;
+
+      
+      
+       $sql = "insert into sec_role (type)
+        values ('".$_POST['rolename']."')";
+$this->db->query($sql);
+  $id = $this->db->insert_id();
+ 
+  foreach($_POST as $key=>$value)
+      {
+        if($key!='rolename')
+        {
+            
+            $input=explode('_',$key);
+             $menu=strtolower($input[0]);
+             $col=strtolower($input[1]);
+
+              $sql="insert into  role_permission(`".$col."`,`menu`) values(1,'$menu')";
+             $this->db->query($sql);
+                    }
+      }
+
+ redirect("Permission/add_role");
+        // $CI =& get_instance();
+        // $CI->auth->check_admin_auth();
+        // $CI->load->model('Permission_model');
 
 
-        $data['title'] = display('add_role_permission');
-        /*-----------------------------------*/
+        // $data['title'] = display('add_role_permission');
+        // /*-----------------------------------*/
 
-        $data = array(
-            'type' => $this->input->post('role_id',true),
-        );
-        $insert_id=$CI->Permission_model->insert_user_entry($data);
-        /*-----------------------------------*/
+        // $data = array(
+        //     'type' => $this->input->post('role_id',true),
+        // );
+        // $insert_id=$CI->Permission_model->insert_user_entry($data);
+        // /*-----------------------------------*/
 
-        $fk_module_id = $this->input->post('fk_module_id',true);
-        $create = $this->input->post('create',true);
-        $read = $this->input->post('read',true);
-        $update = $this->input->post('update',true);
-        $delete = $this->input->post('delete',true);
+        // $fk_module_id = $this->input->post('fk_module_id',true);
+        // $create = $this->input->post('create',true);
+        // $read = $this->input->post('read',true);
+        // $update = $this->input->post('update',true);
+        // $delete = $this->input->post('delete',true);
 
 
-        $new_array = array();
-        for ($m = 0; $m < sizeof($fk_module_id); $m++) {
-            for ($i = 0; $i < sizeof($fk_module_id[$m]); $i++) {
-                for ($j = 0; $j < sizeof($fk_module_id[$m][$i]); $j++) {
-                    $dataStore = array(
-                        'role_id' => $insert_id,
-                        'fk_module_id' => $fk_module_id[$m][$i][$j],
-                        'create' => (!empty($create[$m][$i][$j]) ? $create[$m][$i][$j] : 0),
-                        'read'   =>   (!empty($read[$m][$i][$j]) ? $read[$m][$i][$j] : 0),
-                        'update' => (!empty($update[$m][$i][$j]) ? $update[$m][$i][$j] : 0),
-                        'delete' => (!empty($delete[$m][$i][$j]) ? $delete[$m][$i][$j] : 0),
-                    );
-                    array_push($new_array, $dataStore);
-                }
-            }
-        }
-        /*-----------------------------------*/
-            if ($this->Permission_model->create($new_array)) {
-                $id = $this->db->insert_id();
-                $this->session->set_flashdata('message', display('role_permission_added_successfully'));
-            }
-            else {
-                $this->session->set_flashdata('exception', display('please_try_again'));
-            }
-            redirect("Permission/add_role");
+        // $new_array = array();
+        // for ($m = 0; $m < sizeof($fk_module_id); $m++) {
+        //     for ($i = 0; $i < sizeof($fk_module_id[$m]); $i++) {
+        //         for ($j = 0; $j < sizeof($fk_module_id[$m][$i]); $j++) {
+        //             $dataStore = array(
+        //                 'role_id' => $insert_id,
+        //                 'fk_module_id' => $fk_module_id[$m][$i][$j],
+        //                 'create' => (!empty($create[$m][$i][$j]) ? $create[$m][$i][$j] : 0),
+        //                 'read'   =>   (!empty($read[$m][$i][$j]) ? $read[$m][$i][$j] : 0),
+        //                 'update' => (!empty($update[$m][$i][$j]) ? $update[$m][$i][$j] : 0),
+        //                 'delete' => (!empty($delete[$m][$i][$j]) ? $delete[$m][$i][$j] : 0),
+        //             );
+        //             array_push($new_array, $dataStore);
+        //         }
+        //     }
+        // }
+        // /*-----------------------------------*/
+        //     if ($this->Permission_model->create($new_array)) {
+        //         $id = $this->db->insert_id();
+        //         $this->session->set_flashdata('message', display('role_permission_added_successfully'));
+        //     }
+        //     else {
+        //         $this->session->set_flashdata('exception', display('please_try_again'));
+        //     }
+        //     redirect("Permission/add_role");
     }
 
     public function user_assign()

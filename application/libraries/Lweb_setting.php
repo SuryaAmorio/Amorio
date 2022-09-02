@@ -726,13 +726,22 @@ class Lweb_setting {
     public function invoice_design()
     {
         $CI = & get_instance();
+        $CD = & get_instance();
         $CI->load->model('invoice_design');
+        $CD->load->model('Companies');
 
        $dataw = $CI->invoice_design->retrieve_data();
+       $datac = $CD->Companies->company_details();
        $data= array(
         'header'=> $dataw[0]['header'],
-        'logo'=> $dataw[0]['logo'],
+        'logo'=>$datac[0]['logo'],
+        'cname'=>$datac[0]['company_name'],
+        'email'=>$datac[0]['email'],
+        'address'=>$datac[0]['address'],
+        'mobile'=>$datac[0]['mobile'],
+        'website'=>$datac[0]['website'],
         'color'=> $dataw[0]['color'],
+        'template'=> $dataw[0]['template'],
         ''
    );
 

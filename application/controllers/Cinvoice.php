@@ -20,7 +20,15 @@ class Cinvoice extends CI_Controller {
 
     }
 
+public function updateinvoicedesign($id,$uid)
+{
 
+   
+ $query='update invoice_design set template='.$id.' where uid='.$uid;
+$this->db->query($query);
+redirect($_SERVER['HTTP_REFERER']);
+    redirect('cinvoice/updateinvoicedesign', 'refresh');
+}
 
     public function index() {
      

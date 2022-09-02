@@ -26,6 +26,7 @@ class User extends CI_Controller {
     #===============User Search Item===========#
 
     public function company_insert(){
+<<<<<<< HEAD
      
 
         $config = array(
@@ -65,6 +66,32 @@ class User extends CI_Controller {
         $data1['cid'] = $last_insert_id;
         $this->db->insert('user_login', $data1);
         redirect(base_url('User'));
+=======
+
+        
+      print_r($_POST);
+        exit();
+        // $data = array(
+        //     'CompanyName' => $company,
+        //     'Email' => $email,
+        //     'Mobile' => $mobile,
+        //     'address' => $address,
+        //     'Website' => $website
+        // );
+
+        // echo '<pre>';
+        //  var_dump($data); die;
+        // echo '</pre>';
+
+        $status =  $this->db->insert('company_information', $data);
+
+        if($status === true)
+        {
+            echo "<script>alert('Detailed Saved Successfully')</script>";
+        }else{
+            echo "<script>alert('Detailed Saved Failed!!!!!')</script>";
+        }
+>>>>>>> 1f0c5873183e8e8b57efbb9700afb1e14b7e3142
     }
 
     public function user_search_item() {

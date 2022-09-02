@@ -8,7 +8,7 @@
             <h1>Add Company</h1>
             <small>Add New Company Information hdghd</small>
             <ol class="breadcrumb">
-                <li><a href="index.html"><i class="pe-7s-home"></i> <?php echo display('home') ?></a></li>
+                <li><a href="index.html"><i class="pe-7s-home"></i> <?php echo display('home') ?>dsds</a></li>
                 <li><a href="#"><?php echo display('web_settings') ?></a></li>
                 <li class="active"><?php echo display('add_user') ?></li>
             </ol>
@@ -67,13 +67,21 @@
                         <div class='col-sm-6'>
                         <table width="800" height="231" border="0" >
                         <tr>
+<<<<<<< HEAD
                         <form action='User/company_insert' method='post' enctype="multipart/form-data">
+=======
+                        <form action="User/company_insert" method="post"  enctype="multipart/form-data">
+>>>>>>> 1f0c5873183e8e8b57efbb9700afb1e14b7e3142
                             <td><label for="bank_name" class="col-sm-3 col-form-label">Name<i class="text-danger">*</i></label></td>
                             <td><input type="text" class='form-control' name="company_name"></td>
                         </tr>
                         <tr>
                             <td><label for="bank_name" class="col-sm-3 col-form-label">Email<i class="text-danger">*</i></label></td>
+<<<<<<< HEAD
                             <td><input type="email" class='form-control' name="company_email"></td>
+=======
+                            <td><input type="email" class='form-control' name="email"></td>
+>>>>>>> 1f0c5873183e8e8b57efbb9700afb1e14b7e3142
                         </tr>
                         <tr>
                             <td><label for="bank_name" class="col-sm-3 col-form-label">Phone<i class="text-danger">*</i></label></td>
@@ -90,11 +98,14 @@
                             
                         </tr>
                         <tr>
+<<<<<<< HEAD
                             <td><label for="bank_name" class="col-sm-3 col-form-label">Logo<i class="text-danger">*</i></label></td>
                             <td><input type="file" class='form-control' name="logo"></td>
                             
                         </tr>
                         <tr>
+=======
+>>>>>>> 1f0c5873183e8e8b57efbb9700afb1e14b7e3142
                         
 
                         </tr>
@@ -151,7 +162,11 @@
                                 <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <input type="hidden" name="uid" value="<?php echo $_SESSION['user_id']; ?>">
                                 <input type="submit" id="add-customer" class="btn btn-primary btn-large" name="add-user" value="<?php echo display('save') ?>" tabindex="6"/>
+<<<<<<< HEAD
                 </form>
+=======
+                            </form>
+>>>>>>> 1f0c5873183e8e8b57efbb9700afb1e14b7e3142
 								
                             </div>
                         </div>
