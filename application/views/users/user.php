@@ -5,12 +5,12 @@
 	        <i class="pe-7s-note2"></i>
 	    </div>
 	    <div class="header-title">
-	        <h1><?php echo display('manage_users') ?></h1>
-	        <small><?php echo display('manage_users') ?></small>
+	        <h1>Manage Admin</h1>
+	        <small>Manage Admin</small>
 	        <ol class="breadcrumb">
 	            <li><a href="#"><i class="pe-7s-home"></i> <?php echo display('home') ?></a></li>
 	            <li><a href="#"><?php echo display('web_settings') ?></a></li>
-	            <li class="active"><?php echo display('manage_users') ?></li>
+	            <li class="active">Manage Admin</li>
 	        </ol>
 	    </div>
 	</section>
@@ -56,7 +56,8 @@
 		        <div class="panel panel-bd lobidrag">
 		            <div class="panel-heading">
 		                <div class="panel-title">
-		                    <h4><?php echo display('manage_users') ?> </h4>
+		                    <!-- <h4><?php echo display('manage_users') ?> </h4> -->
+							<h4>Manage Admin </h4>
 		                </div>
 		            </div>
 		            <div class="panel-body">
